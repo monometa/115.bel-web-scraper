@@ -226,7 +226,7 @@ class Parser:
 
     def dump_to_file(self, data, period):
         filename = ParserConfig.generate_filename(period=period)
-        path = f"./parser/test_data/{filename}"
+        path = f"./data/{filename}"
         with open(path, "w+", encoding="utf8") as f:
             json.dump(*data, f, ensure_ascii=False)
 
