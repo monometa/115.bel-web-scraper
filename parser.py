@@ -228,7 +228,7 @@ class Parser:
         filename = ParserConfig.generate_filename(period=period)
         path = f"./data/{filename}"
         with open(path, "w+", encoding="utf8") as f:
-            json.dump(*data, f, ensure_ascii=False)
+            json.dump(data, f, ensure_ascii=False)
 
     def fetch_period_data(self, period, subjects):
         period_data = []
@@ -341,7 +341,7 @@ class ParserConfig:
             if ru_month == value:
                 eng_month = key
 
-        filename = f"{year}_{eng_month}.json"
+        filename = f"{year}_{eng_month.lower()}.json"
         return filename
 
     def generate_template_date(year: int, month: int, day: int):
