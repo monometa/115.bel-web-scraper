@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import re
-from datetime import date
+from datetime import date, timedelta
 from tqdm import tqdm
 
 
@@ -344,12 +344,14 @@ class ParserConfig:
         filename = f"{year}_{eng_month.lower()}.json"
         return filename
 
-    def generate_template_date(year: int, month: int, day: int):
+    def generate_template_date(input_datetime):
         """
-        Generate date in Russian Language
+        Generate formatted date in Russian Language
         """
-        d = date(year, month, day)
-        date_string = d.strftime("%w, %d %B, %Y")
+        first_day_month_current = input_datetime.replace(day=1)
+        previous_month = first_day_month_current - timedelta(days=1)
+        first_day_previous_month = previous_month.replace(day=1)
+        date_string = first_day_previous_month.strftime("%w, %d %B, %Y")
 
         # change day of week from number to ru_name
         day_number = re.search("(.*?),", date_string).group(1)
