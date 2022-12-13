@@ -17,8 +17,9 @@ def main():
         protected = payload_params['protected'],
         salt = payload_params['salt'],
     )
-    period = ParserConfig.generate_template_date(date.today())
-    parser_session.parse(periods=period, subjects=subjects)
+    periods = []
+    periods.append(ParserConfig.generate_template_date(date.today()))
+    parser_session.parse(periods=periods, subjects=subjects)
 
 if __name__ == "__main__":
     main()
