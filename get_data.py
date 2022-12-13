@@ -1,11 +1,6 @@
-# import re
-# import json
-# from tqdm import tqdm
-
-# import requests
-# from bs4 import BeautifulSoup
 from parser_config import *
 from parser import ParserConfig, Parser
+from datetime import date
 
 def main():
 
@@ -14,7 +9,6 @@ def main():
     cookies = config.get_cookies()
     session = config.get_current_session()
 
-    # breakpoint()
     parser_session = Parser(
         session = session,
         cookies = cookies,
@@ -22,11 +16,9 @@ def main():
         p_request = payload_params['p_request'],
         protected = payload_params['protected'],
         salt = payload_params['salt'],
-        # **payload_params
-
     )
-    # breakpoint()
-    parser_session.parse(periods=periods, subjects=subjects)
+    period = ParserConfig.generate_template_date(date.today())
+    parser_session.parse(periods=period, subjects=subjects)
 
 if __name__ == "__main__":
     main()
