@@ -77,7 +77,6 @@ class Parser:
 
     def get_ticket_content(self, raw_tickets):
         tickets = []
-
         for raw_ticket in raw_tickets["row"]:
 
             infotext = raw_ticket["INFOTEXT"]
@@ -260,7 +259,6 @@ class Parser:
             del ticket["request_link"]
 
             amended_apl = {**ticket, **apl, **category_param}
-            # breakpoint()
             db.append(amended_apl)
 
         return db
