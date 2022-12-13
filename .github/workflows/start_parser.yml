@@ -32,15 +32,13 @@ jobs:
         name: parsing_results
         path: ./data
         retention-days: 5
-#     - name: Upload to S3
-#     - uses: shallwefootball/s3-upload-action@master
-#       id: S3
-#       with:
-#         aws_key_id: ${{secrets.AWS_KEY_ID}}
-#         aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
-#         aws_bucket: 115bel
-#         source_dir: ./data
         
+    - uses: shallwefootball/s3-upload-action@master
+      with:
+        aws_key_id: ${{secrets.AWS_KEY_ID}}
+        aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        aws_bucket: 115bel
+        source_dir: ./data
         
 #       env:
 #         KAGGLE_KEY: ${{secrets.KAGGLE_KEY}}
