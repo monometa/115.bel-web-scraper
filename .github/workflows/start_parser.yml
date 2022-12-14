@@ -1,18 +1,11 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
 name: 115.bel
-
 on:
   schedule:
   - cron: "0 0 2 * 0"
   workflow_dispatch:
-  
 jobs:
   web-scraper-process:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
@@ -32,10 +25,10 @@ jobs:
         name: parsing_results
         path: ./data
         retention-days: 5
-#     - uses: actions/download-artifact@v3
-#       id: download
-#       with:
-#         name: 'my-artifact'
-#         path: ./data/*
-      env:
-        KAGGLE_KEY: ${{secrets.KAGGLE_KEY}}
+    - uses: shallwefootball/s3-upload-action@master
+      with:
+        aws_key_id: ${{secrets.AWS_KEY_ID}}
+        aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+        aws_bucket: 115bel
+        source_dir: ./data
+        destination_dir: from_parser
