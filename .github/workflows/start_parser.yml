@@ -39,6 +39,7 @@ jobs:
         aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
         aws_bucket: 115bel
         source_dir: ./data
+        destination_dir: from_parser
         
 #       env:
 #         KAGGLE_KEY: ${{secrets.KAGGLE_KEY}}
