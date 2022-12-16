@@ -125,8 +125,8 @@ def print_df_5_rows(file):
 
 
 def main():
-    transform_spark('2020_may.json')
-    print_df_5_rows('2020_may.json')
+    transform_spark('2020_may')
+    print_df_5_rows('2020_may')
 
 if __name__ == "__main__":
     main()
