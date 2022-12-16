@@ -28,6 +28,9 @@ jobs:
     - name: run data processing script 
       run: |
         python data_processing_spark.py 
+      env:
+        AWS_ACCESS_KEY_ID: ${{secrets.AWS_KEY_ID}}
+        AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
 #     - name: run parser
 #       run: |
 #         python get_data.py
