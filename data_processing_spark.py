@@ -7,7 +7,7 @@ import pyspark.sql.functions as f
 
 schema = StructType(
     [
-        StructField("address", StringType(), True),
+        StructField("adress", StringType(), True),
         StructField("category", StringType(), True),
         StructField("district", StringType(), True),
         StructField("malfunction_type", StringType(), True),
