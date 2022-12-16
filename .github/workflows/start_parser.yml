@@ -20,11 +20,14 @@ jobs:
         spark-version: '3.2.1'
         hadoop-version: '3.2'
     - run: spark-submit --version
-#     - name: Install dependencies
-#       run: |
-#         python -m pip install --upgrade pip
-#         pip install flake8 pytest
-#         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: run data processing script 
+      run: |
+        python data_processing_spark.py 
 #     - name: run parser
 #       run: |
 #         python get_data.py
