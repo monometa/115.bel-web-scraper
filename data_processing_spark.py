@@ -1,9 +1,8 @@
 # import os
-# from datetime import datetime, timedelta
-from pyspark.sql import SparkSession
-from pyspark.sql.types import *
-import pyspark.sql.functions as f
 
+import pyspark.sql.functions as f
+from pyspark.sql import SparkSession
+from pyspark.sql.types import IntegerType, StringType, StructField, StructType
 
 schema = StructType(
     [
@@ -119,14 +118,17 @@ def transform_spark(file):
 
 def print_df_5_rows(file):
     spark = get_spark()
-    df = spark.read.format("parquet").load(f"s3a://115bel/processed_parquet/{file}.parquet/*")
+    df = spark.read.format("parquet").load(
+        f"s3a://115bel/processed_parquet/{file}.parquet/*"
+    )
 
     df.show(5, vertical=True)
 
 
 def main():
-    transform_spark('2020_may')
-    print_df_5_rows('2020_may')
+    transform_spark("2020_may")
+    print_df_5_rows("2020_may")
+
 
 if __name__ == "__main__":
     main()
