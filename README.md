@@ -2,7 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/107945681/207574269-61ec5140-e69e-4df4-941b-5459fbb3dedf.png)
 
-This is a https://115.xn--90ais/ python web scraper automated using Github actions that receives raw data for the previous month and stores it in S3 bucket as JSON. Historical raw data by month available from 2019. 
+This is a https://115.xn--90ais/ python web scraper automated using Github actions that receives raw data for the previous month and stores it in S3 bucket as JSON. Historical raw data by month available from 2019.
 
 Dataset language: Russian
 
