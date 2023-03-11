@@ -9,10 +9,9 @@ try:
 except AttributeError:
     pass
 
-entrypoint_url = "https://115.xn--90ais/portal/f?p=10901:"
-host_url = "https://115.xn--90ais/portal/"
-post_url = "https://115.xn--90ais/portal/wwv_flow.ajax"
-preview_url = "https://115.xn--90ais/portal/wwv_flow.ajax"
+ENTRYPOINT_URL = "https://115.xn--90ais/portal/f?p=10901:"
+HOST_URL = "https://115.xn--90ais/portal/"
+AJAX_URL = "https://115.xn--90ais/portal/wwv_flow.ajax"
 
 
 def get_configured_subjects() -> dict:
@@ -91,17 +90,17 @@ def get_configured_subjects() -> dict:
 # "Суббота, 01 Октябрь, 2022",
 # ]
 
-week_days = {
-    "1": "Понедельник",
-    "2": "Вторник",
-    "3": "Среда",
-    "4": "Четверг",
-    "5": "Пятница",
-    "6": "Суббота",
-    "0": "Воскресенье",
+RUSSIAN_WEEKDAYS = {
+    0: "Понедельник",
+    1: "Вторник",
+    2: "Среда",
+    3: "Четверг",
+    4: "Пятница",
+    5: "Суббота",
+    6: "Воскресенье",
 }
 
-months_translate = {
+MONTHS_TRANSLATE = {
     "January": "Январь",
     "February": "Февраль",
     "March": "Март",
@@ -114,4 +113,19 @@ months_translate = {
     "October": "Октябрь",
     "November": "Ноябрь",
     "December": "Декабрь",
+}
+
+RUSSIAN_MONTHS = {
+    1: "Январь",
+    2: "Февраль",
+    3: "Март",
+    4: "Апрель",
+    5: "Май",
+    6: "Июнь",
+    7: "Июль",
+    8: "Август",
+    9: "Сентябрь",
+    10: "Октябрь",
+    11: "Ноябрь",
+    12: "Декабрь",
 }
