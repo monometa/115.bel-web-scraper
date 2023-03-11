@@ -1,0 +1,22 @@
+version: 1
+formatters:
+  std_format:
+    format: "{asctime} - {levelname} [{filename}:{lineno}] - {message}"
+    style: "{"
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: std_format
+    stream: ext://sys.stdout
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: std_format
+    filename: ./logs/parser_logs.txt
+    mode: a
+loggers:
+  parserLogger:
+    level: DEBUG
+    handlers: [console, file]
+    propagate: no
