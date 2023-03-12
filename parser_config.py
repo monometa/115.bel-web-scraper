@@ -129,3 +129,9 @@ RUSSIAN_MONTHS = {
     11: "Ноябрь",
     12: "Декабрь",
 }
+
+TICKET_NUMBER_PATTERN = "Заявка № (.*?)<br>"
+DISTRICT_PATTERN = "Адрес: </b>(.*?),"
+MALFUNCTION_TYPE_PATTERN = "Вид неисправности: </b>(.*?)<br>"
+PERFORMER_PATTERN = "<b> Исполнитель: </b>(.*?)<br>"
+LINK_PATTERN = '<a href="(.*?)">'
