@@ -50,12 +50,12 @@ class ParserSession:
         # retrieving the payload into separate methods.
         self.cookies = r.cookies
         logger.debug("Cookies were initialized")
-        url_map = self.extract_url_map(r.text)
-        payload_params = self.fetch_payload_params(url_map)
+        url_map = self.retrieve_url_map(r.text)
+        payload_params = self.retrieve_payload_params(url_map)
         logger.debug("ParserSesssion payload params were received")
         return payload_params
 
-    def fetch_payload_params(self, url_map: str) -> dict:
+    def retrieve_payload_params(self, url_map: str) -> dict:
         """
         Fetches the payload parameters.
 
@@ -84,7 +84,7 @@ class ParserSession:
             "salt": salt,
         }
 
-    def extract_url_map(self, response_text: str) -> str:
+    def retrieve_url_map(self, response_text: str) -> str:
         """
         Extracts the URL map.
 
