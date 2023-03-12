@@ -1,0 +1,8 @@
+2023-03-12 12:10:09,094 - INFO [main.py:9] - Start obtaining HTTP headers and payload
+2023-03-12 12:10:10,167 - DEBUG [parserSession.py:52] - Cookies were initialized
+2023-03-12 12:10:11,179 - DEBUG [parserSession.py:55] - ParserSesssion payload params were received
+2023-03-12 12:10:11,179 - INFO [main.py:14] - Initializing main parser
+2023-03-12 12:10:11,179 - INFO [main.py:24] - Obtaining periods
+2023-03-12 12:10:11,179 - INFO [main.py:26] - Obtaining subjects
+2023-03-12 12:10:11,179 - INFO [main.py:28] - Start parsing
+2023-03-12 12:10:15,746 - INFO [main.py:30] - Finished parsing
