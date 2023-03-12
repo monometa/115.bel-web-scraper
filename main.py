@@ -6,12 +6,12 @@ from parser_config import get_configured_subjects
 
 
 def main() -> None:
-    logger.info("Start getting http headers and payload")
+    logger.info("Start obtaining HTTP headers and payload")
     config = ParserSession()
     payload_params = config.get_payload()
     cookies = config.cookies
     session = config.session
-    logger.info("Init main parser")
+    logger.info("Initializing main parser")
     parser_session = Parser(
         session=session,
         cookies=cookies,
@@ -21,13 +21,13 @@ def main() -> None:
         salt=payload_params["salt"],
     )
     periods = []
-    logger.info("Getting periods")
+    logger.info("Obtaining periods")
     periods.append(ParserSession.generate_template_date(date.today()))
-    logger.info("Getting subjects")
+    logger.info("Obtaining subjects")
     subjects = get_configured_subjects()
     logger.info("Start parsing")
     parser_session.parse(periods=periods, subjects=subjects)
-    logger.info("Finish parsing")
+    logger.info("Finished parsing")
 
 
 if __name__ == "__main__":
